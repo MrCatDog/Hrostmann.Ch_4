@@ -10,6 +10,7 @@ public class LabeledPoint extends Point {
         return label;
     }
 
+    @Override
     public String toString() {
         return label+" "+super.toString();
     }

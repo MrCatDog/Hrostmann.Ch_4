@@ -1,7 +1,9 @@
+package Ex_from_1_to_5;
+
 public class LabeledPoint extends Point {
     private String label;
 
-    LabeledPoint(String label, double x,double y){
+    public LabeledPoint(String label, double x,double y){
         super(x,y);
         this.label=label;
     }

@@ -1,5 +1,9 @@
 package Ex_from_1_to_5;
 
+/**
+ * Base class for all shapes.
+ * Contains 1 key point and several standard methods, one of them is abstract.
+ **/
 public abstract class Shape {
     Point point;
 

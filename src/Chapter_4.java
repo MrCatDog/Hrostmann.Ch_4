@@ -1,11 +1,24 @@
 import Ex_from_1_to_5.*;
 
+/**
+ * Main class for demonstrating all exercises one by one.
+ * Ex.1: Make Point class and a subclass LabledPoint.
+ * Ex.2: Define methods toString(), equals() and hashCode() for previous methods.
+ * Ex.3: Define variables x and y from Point class as protected, try to access them from another package.
+ * Ex.4: Define abstract class Shape with Point variable, constructor, method moveBy(double x, double y)
+ * and abstract method public Point getCenter(). Provide implementation classes: Circle, Rectangle, Line.
+ * Ex.5: Define clone() methods for previous classes.
+ * Ex.6: Realize method equals() in DiscountItem class for comparing superclass only with Item class parameters,
+ * and with discount in case of DiscountedItem. Show symmetry property and lack of transitivity property.
+ */
 public class Chapter_4 {
     public static void main(String[] args) {
         System.out.println("\nEx. 1-3:");
         Ex_1_3();
         System.out.println("\nEx. 4-5:");
         Ex_4_5();
+        System.out.println("\nEx. 6:");
+        Ex_6();
     }
 
     private static void Ex_1_3() {
@@ -42,5 +55,19 @@ public class Chapter_4 {
         System.out.println("Shift by 1 on 0y");
         rectangle2.moveBy(0,1);
         System.out.println(rectangle.getPos().toString()+" "+rectangle2.getPos().toString());
+    }
+
+    private static void Ex_6() {
+        Item second = new Item("second",100);
+        DiscountedItem dSecond = new DiscountedItem("second",100,30);
+        Item second2 = new Item("second",100);
+        System.out.println("Symmetry check:");
+        System.out.println(second.equals(dSecond));
+        System.out.println(dSecond.equals(second));
+        System.out.println("\nTransitivity check:");
+        System.out.println("second=second2? "+second.equals(second2)+"\nSecond2=dSecond? "+second2.equals(dSecond));
+        //Чёрт пойму как я покажу отсутствие транзитивности, если в книге написанно делать вызов x-y, y-z, но не x-z.
+        // Ну ладно, вот вызов x-z и он тоже true, но это не потому что до этого мы могли бы самостоятельно сделать такой вывод.
+        System.out.println("second=dSecond? "+dSecond.equals(second));
     }
 }

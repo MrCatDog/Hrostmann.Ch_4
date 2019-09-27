@@ -30,7 +30,7 @@ public class Point {
         if(anotherObj == null) return false;
         if(!(anotherObj instanceof Point)) return false;
         Point another = (Point) anotherObj;
-        Double x = this.x;
+        Double x = this.x;//packing
         Double y = this.y;
         return x.equals(another.getX()) && y.equals(another.getY());
     }

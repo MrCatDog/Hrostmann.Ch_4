@@ -10,6 +10,7 @@ import Ex_from_1_to_5.*;
  * Ex.5: Define clone() methods for previous classes.
  * Ex.6: Realize method equals() in DiscountItem class for comparing superclass only with Item class parameters,
  * and with discount in case of DiscountedItem. Show symmetry property and lack of transitivity property.
+ * Ex.7: Define enum for 8 base colors with methods getRed(), getGreen(), getBlue().
  */
 public class Chapter_4 {
     public static void main(String[] args) {
@@ -19,6 +20,8 @@ public class Chapter_4 {
         Ex_4_5();
         System.out.println("\nEx. 6:");
         Ex_6();
+        System.out.println("\nEx. 7:");
+        Ex_7();
     }
 
     private static void Ex_1_3() {
@@ -69,5 +72,15 @@ public class Chapter_4 {
         //Чёрт пойму как я покажу отсутствие транзитивности, если в книге написанно делать вызов x-y, y-z, но не x-z.
         // Ну ладно, вот вызов x-z и он тоже true, но это не потому что до этого мы могли бы самостоятельно сделать такой вывод.
         System.out.println("second=dSecond? "+dSecond.equals(second));
+    }
+
+    private static void Ex_7() {
+        for (ColorsEnum i: ColorsEnum.values()) {
+            System.out.println(i.toString() + "\nR:" + i.getRed() + " G:" + i.getGreen() + " B:" + i.getBlue());
+        }
+    }
+
+    private static void Ex_8() {
+
     }
 }
